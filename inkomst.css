@@ -1,0 +1,309 @@
+body {
+  background-image: url('pappertextur.png');
+  background-size: cover;
+}
+
+.hidden {
+  opacity: 0 !important;
+  pointer-events: none !important;
+}
+
+#inkomst-karta {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 95vh;
+  z-index: 1;
+}
+
+#legend{
+  position: absolute;
+  top: 87%;
+  left: 5%;
+  transform: translate(-50%, -50%);
+  height: 20vh;
+  z-index: 1;
+}
+
+#annons {
+  position: absolute;
+  width: 5vw;
+  bottom: 20%;
+  left: 30%;
+  z-index: 4;
+  cursor: pointer;
+  transform: rotate(-3deg);
+  transition: all 1.2s ease;
+  filter: blur(4px);
+}
+
+#annons.unblurred {
+  filter: blur(0px);
+  transition: filter 0.8s ease;
+}
+
+#annons.open {
+  width: 50vw;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(364deg);
+  z-index: 10;
+  transition: all 1.2s ease 0.1s;
+}
+
+body {
+  background-image: url('pappertextur.png');
+  background-size: cover;
+}
+
+.hidden {
+  opacity: 0 !important;
+  pointer-events: none !important;
+}
+
+#inkomst-karta {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 95vh;
+  z-index: 1;
+}
+
+#annons {
+  position: absolute;
+  width: 5vw;
+  top: 45%;
+  left: 55%;
+  z-index: 4;
+  cursor: pointer;
+  transform: rotate(-3deg);
+  transition: all 1.2s ease;
+  filter: blur(4px);
+}
+
+#annons.unblurred {
+  filter: blur(0px);
+  transition: filter 0.8s ease;
+}
+
+#annons.open {
+  width: 50vw;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(364deg);
+  z-index: 10;
+  transition: all 1.2s ease 0.1s;
+}
+
+#annons-copy {
+  position: absolute;
+  top: 75%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 65vw;
+  z-index: 10;
+  font-family: 'Courier New', monospace;
+  font-size: 1.3vw;
+  line-height: 1.6;
+  color: #333;
+  text-align: center;
+  padding: 1vh 1vw;
+  border-radius: 4px;
+  background-color: white;
+  opacity: 0;
+  transition: opacity 0.8s ease;
+}
+
+#blur-overlay {
+  position: fixed;
+  inset: 0;
+  backdrop-filter: blur(4px);
+  background: rgba(237, 228, 207, 0.4);
+  z-index: 3;
+  cursor: pointer;
+  transition: opacity 1s ease;
+}
+
+#pratbubbla {
+  position: absolute;
+  z-index: 5;
+  bottom: 40vh;
+  left: 20vw;
+  width: 50vw;
+  transform: rotate(-5deg);
+  transition: opacity 0.5s ease;
+}
+
+#papper {
+  width: 50%;
+}
+
+#lena-text {
+  position: absolute;
+  top: 14%;
+  left: 5%;
+  width: 40%;
+  font-family: 'Courier New', monospace;
+  font-size: 1.3vw;
+  line-height: 1.6;
+  color: #333;
+}
+
+#eyes {
+  position: absolute;
+  z-index: 5;
+  bottom: 0.1vw;
+  left: 20vh;
+  height: 120vh;
+  transform: rotate(-5deg);
+  transition: opacity 0.5s ease;
+}
+
+#qaxe {
+  position: absolute;
+  z-index: 5;
+  bottom: 7vw;
+  left: 55vw;
+  height: 40vh;
+  transform: rotate(5deg);
+  transform-origin: bottom left;
+  transition: opacity 0.5s ease;
+}
+
+#qaxe_pratbubbla {
+  position: absolute;
+  z-index: 5;
+  bottom: 40vh;
+  left: 65vw;
+  width: 40vw;
+  transform: rotate(5deg);
+  transition: opacity 0.5s ease;
+}
+
+#qaxe-papper {
+  width: 50%;
+}
+
+#qaxe-text {
+  position: absolute;
+  bottom: 5%;
+  left: 5%;
+  width: 40%;
+  font-family: 'Courier New', monospace;
+  font-size: 1.3vw;
+  line-height: 1.6;
+  color: #333;
+}
+
+#blur-overlay {
+  position: fixed;
+  inset: 0;
+  backdrop-filter: blur(8px);
+  z-index: 3;
+  cursor: pointer;
+  transition: opacity 1s ease;
+}
+
+#pratbubbla {
+  position: absolute;
+  z-index: 5;
+  bottom: 40vh;
+  left: 30vw;
+  width: 50vw;
+  transform: rotate(-5deg);
+  transition: opacity 0.5s ease;
+}
+
+#papper {
+  width: 50%;
+}
+
+#lena-text {
+  position: absolute;
+  top: 14%;
+  left: 5%;
+  width: 40%;
+  font-family: 'Courier New', monospace;
+  font-size: 1.3vw;
+  line-height: 1.6;
+  color: #333;
+}
+
+#qaxe {
+  position: absolute;
+  z-index: 5;
+  bottom: 7vw;
+  left: 50vw;
+  height: 40vh;
+  transform: rotate(5deg);
+  transform-origin: bottom left;
+  transition: opacity 0.5s ease;
+}
+
+#qaxe_pratbubbla {
+  position: absolute;
+  z-index: 5;
+  bottom: 40vh;
+  left: 60vw;
+  width: 40vw;
+  transform: rotate(5deg);
+  transition: opacity 0.5s ease;
+}
+
+#qaxe-papper {
+  width: 50%;
+}
+
+#qaxe-text {
+  position: absolute;
+  top: 2%;
+  left: 5%;
+  width: 40%;
+  font-family: 'Courier New', monospace;
+  font-size: 1.3vw;
+  line-height: 1.6;
+  color: #333;
+}
+
+#annons-stack {
+  position: absolute;
+  width: 5vw;
+  min-height: 5vw;
+  top: 56%;
+  left: 62%;
+  transform: translate(-50%, -50%);
+  z-index: 4;
+  cursor: pointer;
+  filter: blur(4px);
+  transition: filter 0.8s ease;
+}
+
+.annons-item {
+  position: absolute;
+  width: auto;
+  height: 5vw;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition: height 1.2s ease, opacity 0.4s ease;
+}
+
+#annons-stack.open {
+  width: 50vw;
+  min-height: 55vh;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 10;
+  transition: all 1.2s ease 0.1s;
+}
+
+#annons-stack.open .annons-item {
+  height: 55vh;
+}
+#annons-stack.unblurred {
+  filter: blur(0px);
+}
+

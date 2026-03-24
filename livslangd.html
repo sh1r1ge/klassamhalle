@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>utlandsfödda</title>
+    <link rel="stylesheet" href="livslangd.css">
+</head>
+<body>
+    <img src="livslangd.png" id="livslangd-karta">
+        <img src="legend3.png" id="legend">
+
+        <div id="pratbubbla">
+      <img src="akvarell.png" id="papper">
+      <p id="lena_qaxe2-text">Mmm för medelålder. Medelålder vid döden... Döden?</p>
+    </div>
+
+    <img src="lena_qaxe2.png" id="lena_qaxe2">
+    <img src="rad.png" id="rad">
+
+
+    <div id="blur-overlay"></div>
+    <img src="grattis.png" id="grattis">
+    <div id="grattis-copy-wrapper">
+    <p id="grattis-copy">Medelåldern i Bredäng är 76. På Gärdet är den 84. Den som lever får se.</p>
+  <div id="grattis-open-wrapper">
+  <img src="grattis_open.png" id="grattis-open">
+</div>
+
+
+<script>
+  let passOpen = false;
+  let overlayDone = false;
+
+  document.addEventListener('click', function() {
+    if (!overlayDone) {
+      overlayDone = true;
+      document.getElementById('blur-overlay').classList.add('hidden');
+      document.getElementById('pratbubbla').classList.add('hidden');
+      document.getElementById('lena_qaxe2').classList.add('hidden');
+      document.getElementById('rad').classList.add('hidden');
+      document.getElementById('grattis').classList.add('unblurred');
+    }
+  });
+
+  document.getElementById('grattis').addEventListener('click', function(e) {
+    e.stopPropagation();
+    if (!passOpen) {
+      passOpen = true;
+      this.classList.add('open');
+  document.getElementById('livslangd-karta').style.filter = 'blur(6px)';
+  document.getElementById('livslangd-karta').style.transition = 'filter 0.8s ease';
+  document.getElementById('legend').style.filter = 'blur(6px)';
+document.getElementById('legend').style.transition = 'filter 0.8s ease';
+} else {
+  this.style.opacity = '0';
+  document.getElementById('grattis-open').style.opacity = '1';
+  document.getElementById('grattis-copy').style.opacity = '1';
+  document.addEventListener('click', function() {
+    window.location.href = 'grattis.html';
+  });
+}
+  });
+</script>
+</body>
+</html>

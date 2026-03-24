@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inkomst</title>
+    <link rel="stylesheet" href="inkomst.css">
+</head>
+<body>
+    <img src="inkomst.png" id="inkomst-karta">
+     <img src="legend.png" id="legend">
+
+    
+    <div id="pratbubbla">
+      <img src="post_it.png" id="papper">
+      <p id="lena-text">Lena was here. Välkommen till inkomstkartan.<br><br>Här är min hund Qaxe!<br><br>Vad har han att säga om småborgerlighet?</p>
+    </div>
+    
+      <img src="eyes.png" id="eyes">
+
+    <img src="qaxe.png" id="qaxe">
+    
+    <div id="qaxe_pratbubbla">
+      <img src="qaxe_pratbubbla.png" id="qaxe-papper">
+      <p id="qaxe-text">Sväng till vänster om du ska höger och höger om du ska vänster!</p>
+    </div>
+
+   <div id="blur-overlay"></div>
+
+<div id="annons-stack">
+<img src="annons5.png" class="annons-item" style="transform: translate(-50%, -50%) rotate(-6deg)">
+<img src="annons4.png" class="annons-item" style="transform: translate(-50%, -50%) rotate(4deg)">
+<img src="annons3.png" class="annons-item" style="transform: translate(-50%, -50%) rotate(-2deg)">
+<img src="annons2.png" class="annons-item" style="transform: translate(-50%, -50%) rotate(7deg)">
+<img src="annons.png" class="annons-item" style="transform: translate(-50%, -50%) rotate(-3deg)">
+</div>
+
+<div id="annons-copy-wrapper">
+  <p id="annons-copy">Exklusivt läge. Välkomnande grannskap. Här investerar du i mer än en bostad — du investerar i din framtid. Medelinkomsten i Vasastan är 604 000 kr. I Rinkeby är den 213 000 kr. Välkommen hem om du har råd.</p>
+</div>
+<script>
+  let overlayDone = false;
+  let clickCount = 0;
+  const stack = document.getElementById('annons-stack');
+  const ads = stack.querySelectorAll('.annons-item');
+  let currentTop = ads.length - 1;
+
+  document.addEventListener('click', function() {
+    if (!overlayDone) {
+      overlayDone = true;
+      document.getElementById('blur-overlay').classList.add('hidden');
+      document.getElementById('pratbubbla').classList.add('hidden');
+      document.getElementById('qaxe').classList.add('hidden');
+      document.getElementById('qaxe_pratbubbla').classList.add('hidden');
+      document.getElementById('eyes').classList.add('hidden');
+      stack.classList.add('unblurred');
+    }
+  });
+
+  stack.addEventListener('click', function(e) {
+    e.stopPropagation();
+    clickCount++;
+
+    if (clickCount === 1) {
+      stack.classList.add('open');
+      document.getElementById('blur-overlay').classList.add('hidden');
+      document.getElementById('inkomst-karta').style.filter = 'blur(6px)';
+      document.getElementById('inkomst-karta').style.transition = 'filter 0.8s ease';
+      document.getElementById('legend').style.filter = 'blur(6px)';
+      document.getElementById('legend').style.transition = 'filter 0.8s ease';
+      document.getElementById('annons-copy').style.opacity = '1';
+    } else {
+      if (currentTop >= 0) {
+        ads[currentTop].style.opacity = '0';
+        ads[currentTop].style.pointerEvents = 'none';
+        currentTop--;
+      }
+      if (currentTop < 0) {
+        setTimeout(() => {
+          window.location.href = 'utlandsfodda.html';
+        }, 400);
+      }
+      
+    }
+    jsdocument.getElementById('album').addEventListener('click', function(e) {
+  e.stopPropagation();
+  console.log('album clicked');
+  this.classList.add('open');
+});
+
+    
+  });
+</script>
+</body>
+</html>

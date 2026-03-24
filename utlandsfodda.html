@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>utlandsfödda</title>
+    <link rel="stylesheet" href="utlandsfodda.css">
+</head>
+<body>
+    <img src="utlandsfodda.png" id="utlandsfodda-karta">
+    <img src="legend2.png" id="legend">
+
+        <div id="pratbubbla">
+      <img src="rut.png" id="papper">
+      <p id="lena_qaxe-text">ANDEL UTLANDSFÖDDA I PROCENT.<br>DET ÄR SJUKT EGENTLIGEN… VISST KÄNNS DET HELT KONSTIGT? ATT MAN SKA MÄTA MANNISKOR SÅ?</p>
+    </div>
+
+        <img src="lena_qaxe.png" id="lena_qaxe">
+
+    <div id="blur-overlay"></div>
+    <img src="pass.png" id="pass">
+    <div id="pass-copy-wrapper">
+    <p id="pass-copy">Det svenska passet är rankat som nummer tre i världen. Oddsen att födas med det: ett på 780. 0.13% chans. Andel utlandsfödda i Akalla: 80%. I Nockeby: 9%. På vilka villkor delar vi mark?</p>
+  <div id="pass-open-wrapper">
+  <img src="pass_open.png" id="pass-open">
+</div>
+
+   <img src="album.png" id="album">
+<p id="album-copy">Ett album. Mitt kvarter, Latin Kings, 2000. Botkyrka. Det finns ju inte ens på kartan.</p>
+<img src="fordomar2.png" id="fordomar2-lyrics">
+
+<script>
+  let passOpen = false;
+  let overlayDone = false;
+  let albumOpen = false;
+
+  document.addEventListener('click', function() {
+    if (!overlayDone) {
+      overlayDone = true;
+      document.getElementById('blur-overlay').classList.add('hidden');
+      document.getElementById('pratbubbla').classList.add('hidden');
+      document.getElementById('lena_qaxe').classList.add('hidden');
+      document.getElementById('pass').classList.add('unblurred');
+      document.getElementById('album').classList.add('unblurred');
+    }
+  });
+
+  document.getElementById('pass').addEventListener('click', function(e) {
+    e.stopPropagation();
+    if (!passOpen) {
+      passOpen = true;
+      this.classList.add('open');
+      document.getElementById('utlandsfodda-karta').style.filter = 'blur(6px)';
+      document.getElementById('utlandsfodda-karta').style.transition = 'filter 0.8s ease';
+      document.getElementById('legend').style.filter = 'blur(6px)';
+      document.getElementById('legend').style.transition = 'filter 0.8s ease';
+      document.getElementById('album').style.filter = 'blur(6px)';
+      document.getElementById('album').style.transition = 'filter 0.8s ease';
+
+    } else {
+      this.style.opacity = '0';
+      document.getElementById('pass-open').style.opacity = '1';
+      document.getElementById('pass-copy').style.opacity = '1';
+      document.addEventListener('click', function() {
+        window.location.href = 'livslangd.html';
+      });
+    }
+  });
+
+const audio = new Audio('fordomar2.mp3');
+
+document.getElementById('album').addEventListener('click', function(e) {
+  e.stopPropagation();
+if (!albumOpen) {
+  albumOpen = true;
+  this.classList.add('open');
+  document.getElementById('album-copy').style.opacity = '1';
+  document.getElementById('utlandsfodda-karta').style.filter = 'blur(6px)';
+  document.getElementById('utlandsfodda-karta').style.transition = 'filter 0.8s ease';
+  document.getElementById('legend').style.filter = 'blur(6px)';
+  document.getElementById('legend').style.transition = 'filter 0.8s ease';
+  } else {
+    this.style.opacity = '0';
+    this.style.pointerEvents = 'none';
+    document.getElementById('album-copy').style.opacity = '0';
+    document.getElementById('fordomar2-lyrics').style.opacity = '1';
+    audio.play();
+    document.getElementById('fordomar2-lyrics').style.pointerEvents = 'all';
+document.getElementById('fordomar2-lyrics').style.zIndex = '20';
+  }
+});
+
+document.getElementById('fordomar2-lyrics').addEventListener('click', function(e) {
+  e.stopPropagation();
+  audio.pause();
+  audio.currentTime = 0;
+  this.style.opacity = '0';
+  this.style.pointerEvents = 'none';
+});
+document.getElementById('fordomar2-lyrics').addEventListener('click', function(e) {
+  e.stopPropagation();
+  audio.pause();
+  audio.currentTime = 0;
+  this.style.opacity = '0';
+  this.style.pointerEvents = 'none';
+  document.getElementById('utlandsfodda-karta').style.filter = 'blur(0px)';
+  document.getElementById('legend').style.filter = 'blur(0px)';
+  document.getElementById('album').style.filter = 'blur(0px)';
+
+});
+</script>
+</body>
+</html>

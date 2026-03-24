@@ -1,0 +1,77 @@
+body {
+  background-image: url('pappertextur.png');
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  margin: 0;
+}
+
+#livslangd-karta {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 95vh;
+  z-index: 1;
+}
+
+#legend{
+  position: absolute;
+  top: 87%;
+  left: 5%;
+  transform: translate(-50%, -50%);
+  height: 20vh;
+  z-index: 1;
+}
+
+
+#popup1, #popup2 {
+  width: 500px;
+  z-index: 10;
+   top: 30%;
+  background: #d4d0c8;
+  border: 2px solid #fff;
+  box-shadow: 2px 2px 0px #000;
+  font-family: 'times new roman', serif;
+  position: absolute;
+}
+
+#popup2 {
+  display: none;
+}
+
+#popup1-titlebar, #popup2-titlebar {
+  background: #000080;
+  color: white;
+  padding: 4px 8px;
+  display: flex;
+  justify-content: space-between;
+  font-size: 13px;
+  font-weight: bold;
+}
+
+#close, #close2 {
+  cursor: pointer;
+}
+
+#popup1-content, #popup2-content {
+  padding: 20px;
+  text-align: center;
+  font-size: 14px;
+  line-height: 1.8;
+}
+
+#acceptera, #okej {
+  background: #4caf50;
+  border: 2px solid #fff;
+  box-shadow: 2px 2px 0px #000;
+  color: white;
+  font-family: 'times new roman', serif;
+  font-size: 13px;
+  font-weight: bold;
+  padding: 6px 20px;
+  cursor: pointer;
+  margin-top: 12px;
+}

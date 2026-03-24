@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grattis</title>
+    <link rel="stylesheet" href="grattis.css">
+</head>
+<body>
+     <img src="livslangd.png" id="livslangd-karta">
+        <img src="legend3.png" id="legend">
+
+  <div id="popup1">
+    <div id="popup1-titlebar">
+      <span>Grattis!!! DETTA ÄR INTE EN SCAM</span>
+      <span id="close">✕</span>
+    </div>
+    <div id="popup1-content">
+      <p>🎉 DU HAR VUNNIT! 🎉</p>
+      <p>Du får växa upp i Äppelviken !!!</p>
+      <button id="acceptera">ACCEPTERA</button>
+    </div>
+  </div>
+
+  <div id="popup2">
+    <div id="popup2-titlebar">
+      <span>Varning ⚠️</span>
+      <span id="close2">✕</span>
+    </div>
+    <div id="popup2-content">
+      <p>Är du säker på att du vill inkarnera här?</p>
+      <p>Hög klasstillhörighet skyddar dig inte från existentiell svindel.</p>
+      <button id="okej">OKEJ</button>
+    </div>
+  </div>
+
+ <script>
+  document.getElementById('acceptera').addEventListener('click', function() {
+    document.getElementById('popup1').style.display = 'none';
+    document.getElementById('popup2').style.display = 'block';
+  });
+
+  document.getElementById('popup2').addEventListener('click', function() {
+    window.location.href = 'index.html';
+  });
+</script>
+</body>
+</html>
