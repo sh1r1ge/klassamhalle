@@ -1,0 +1,154 @@
+body {
+  background-image: url('pappertextur.png');
+  background-size: cover;
+}
+
+#page1 {
+  position: fixed;
+  inset: 0;
+  z-index: 30;
+  transition: opacity 1s ease;
+}
+
+#page2 {
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 1.5s ease;
+  position: fixed;
+  inset: 0;
+  z-index: 20;
+}
+
+#page3 {
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 1s ease;
+  position: fixed;
+  inset: 0;
+  z-index: 10;
+}
+
+.hidden {
+  opacity: 0 !important;
+  pointer-events: none !important;
+}
+
+.visible {
+  opacity: 1 !important;
+  pointer-events: all !important;
+}
+
+#title {
+  position: absolute;
+  top: 43%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 85%;
+  animation: bounce 3s ease-in-out infinite;
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translate(-50%, -50%) scale(1); }
+  50% { transform: translate(-50%, -50%) scale(1.03); }
+}
+
+#undertext {
+  position: absolute;
+  top: 87%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-family: 'Courier New', monospace;
+  font-size: 1vw;
+  color: #333;
+  letter-spacing: 0.1em;
+}
+
+#coremap {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 95vh;
+}
+
+#lena {
+  position: absolute;
+  z-index: 5;
+  bottom: 3vw;
+  left: 17vw;
+  height: 85vh;
+  transform: rotate(-12deg);
+  transform-origin: bottom left;
+}
+
+#pratbubbla {
+  position: absolute;
+  z-index: 4;
+  bottom: 10vh;
+  left: 35vw;
+  width: 50vw;
+}
+
+#papper {
+  width: 100%;
+}
+
+#lena-text {
+  position: absolute;
+  top: 10%;
+  left: 7%;
+  width: 90%;
+  font-family: 'Courier New', monospace;
+  font-size: 1.5vw;
+  line-height: 1.6;
+  color: #333;
+}
+
+#vykort {
+  position: absolute;
+  width: 5vw;
+  top: 50%;
+  left: 60%;
+  z-index: 4;
+  cursor: pointer;
+  transform: rotate(4deg);
+  transition: all 1.2s ease;
+}
+
+#vykort.open {
+  width: 50vw;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(364deg);
+  z-index: 10;
+}
+
+#vykort-bak {
+  position: absolute;
+  width: 46vw;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(364deg);
+  z-index: 3;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.8s ease;
+}
+
+#vykort-copy {
+  position: absolute;
+  top: 75%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60vw;
+  font-family: 'Courier New', monospace;
+  font-size: 1.3vw;
+  line-height: 1.6;
+  color: #333;
+  text-align: center;
+  padding: 1vh 1vw;
+  border-radius: 4px;
+  opacity: 0;
+  transition: opacity 0.8s ease;
+  background-color: white;
+}

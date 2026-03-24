@@ -1,0 +1,76 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="page1">
+    <img src="titeltext2.png" id="title">
+    <p id="undertext">klicka för att komma vidare</p>
+  </div>
+
+  <div id="page2">
+    <img src="coremap.png" id="coremap">
+    <img src="vykort.png" id="vykort">
+    <div id="vykort-bak-wrapper">
+  <img src="baksida_vykort.png" id="vykort-bak">
+</div>
+    <p id="vykort-copy">Det var en gång en stad som menade väl. Den kallade sig öppen, byggde skyddsnät, tog emot världen. Den trodde på sig själv. Men pengar har alltid vetat var de hör hemma. Det här är en karta över utfall. Inte avsikter. Vem får rätten att bli omfamnad av en plats — och vem lämnas utanför?</p>
+    <div id="pratbubbla">
+      <img src="rivet_papper.png" id="papper">
+      <p id="lena-text">Hej, det är jag, Lena Nyman. 1967 gick jag runt i Stockholm och frågade folk om de tyckte att Sverige var ett klassamhälle. Svaren var onekligen tvetydiga. Nu är det din tur. Vandra runt i staden och se efter själv. Klicka på första ledtråden för att komma vidare.</p>
+    </div>
+    <img src="lena.png" id="lena">
+  </div>
+
+<div id="page3">
+  <p>test</p>
+</div>
+
+<script>
+    document.getElementById('page1').addEventListener('click', function() {
+      document.getElementById('page1').classList.add('hidden');
+      document.getElementById('page2').classList.add('visible');
+    });
+
+    document.getElementById('pratbubbla').addEventListener('click', function() {
+      document.getElementById('pratbubbla').style.display = 'none';
+      document.getElementById('lena').style.display = 'none';
+    });
+
+    let vykortOpened = false;
+
+    document.getElementById('vykort').addEventListener('click', function() {
+      if (!vykortOpened) {
+        vykortOpened = true;
+        this.classList.add('open');
+
+        const overlay = document.createElement('div');
+        overlay.style.cssText = `
+          position: fixed;
+          inset: 0;
+          backdrop-filter: blur(6px);
+          z-index: 0;
+        `;
+        overlay.id = 'blur-overlay';
+        document.body.prepend(overlay);
+
+        document.getElementById('coremap').style.filter = 'blur(6px)';
+        document.getElementById('coremap').style.transition = 'filter 0.8s ease';
+
+      } else {
+        this.style.opacity = '0';
+        document.getElementById('vykort-bak').style.opacity = '1';
+        document.getElementById('vykort-bak-wrapper').style.cssText = 'position: fixed; inset: 0; z-index: 12; cursor: pointer;';
+        document.getElementById('vykort-copy').style.opacity = '1';
+      }
+    }); // 👈 denna saknades
+
+document.getElementById('vykort-bak-wrapper').addEventListener('click', function() {
+  window.location.href = 'inkomst.html';
+});
+</script>
+</body>
+</html>
